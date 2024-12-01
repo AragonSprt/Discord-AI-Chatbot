@@ -14,13 +14,6 @@ if (!process.env.GEMINI_API_KEY || !process.env.DISCORD_BOT_TOKEN) {
     process.exit(1);
 }
 
-// Set up log file
-const logFilePath = path.join(__dirname, 'bot.log');
-const logToFile = (message) => {
-    const timestamp = new Date().toISOString();
-    fs.appendFileSync(logFilePath, `[${timestamp}] ${message}\n`);
-};
-
 // Initialize Discord client
 const client = new Client({
     intents: [
@@ -49,7 +42,6 @@ const DEDICATED_CHANNEL_ID = 'YOUR_CHANNEL_ID_HERE';
 client.on('ready', () => {
     const readyMessage = `${client.user.tag} is online and ready to chat!`;
     console.log(readyMessage);
-    logToFile(readyMessage);
 });
 
 // Event listener for new messages
@@ -57,23 +49,16 @@ client.on('messageCreate', async (message) => {
     // Ignore messages from bots and messages not in the dedicated channel
     if (message.author.bot || message.channel.id !== DEDICATED_CHANNEL_ID) return;
 
-    const incomingMessageLog = `Received message from ${message.author.tag}: ${message.content}`;
-    logToFile(incomingMessageLog);
-
     try {
         // Start a new chat session and send user input to the AI
         const chatSession = model.startChat({ generationConfig, history: [] });
         const result = await chatSession.sendMessage(message.content);
-
-        const aiResponseLog = `AI response to ${message.author.tag}: ${result.response.text()}`;
-        logToFile(aiResponseLog);
 
         // Send the AI's response back to the Discord channel
         await message.channel.send(result.response.text());
     } catch (error) {
         const errorLog = `Error interacting with AI: ${error.message}`;
         console.error(errorLog);
-        logToFile(errorLog);
 
         await message.channel.send("Sorry, I couldn't process that. Please try again later.");
     }
