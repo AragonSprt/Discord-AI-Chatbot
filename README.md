@@ -30,7 +30,7 @@ Then run in the terminal:
 
 <br>
 
-<img align='center' alt="Static Badge" src="https://img.shields.io/badge/Node.js-green"> <img align='center' alt="Static Badge" src="https://img.shields.io/badge/Build-JavaScript-yellow"> <img align='center' alt="Static Badge" src="https://img.shields.io/badge/Open-source-blue"> <img align='center' alt="Static Badge" src="https://img.shields.io/badge/license-GNU--3.0-orange"> <img align='center' alt="Static Badge" src="https://img.shields.io/badge/Visual%20Studio%20Code-blue">
+<img align='center' alt="Static Badge" src="https://img.shields.io/badge/Node.js-green"> <img align='center' alt="Static Badge" src="https://img.shields.io/badge/Build-JavaScript-yellow"> <img align='center' alt="Static Badge" src="https://img.shields.io/badge/Open-source-blue"> <img align='center' alt="Static Badge" src="https://img.shields.io/badge/license-GPL--3.0-orange"> <img align='center' alt="Static Badge" src="https://img.shields.io/badge/Visual%20Studio%20Code-blue">
 
 
 
