@@ -1,6 +1,6 @@
 <h1 align='center'>Discord-AI-Chatbot</h1>
 
-<h3 align="center">A JavaScript-based Discord Bot leveraging Google's Gemini API for AI-driven conversations.</h3>
+<h3 align="center">A JavaScript-based Discord Bot using Google's Gemini API for AI-driven conversations.</h3>
 
 <br><br>
 
